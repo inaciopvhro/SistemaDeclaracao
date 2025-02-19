@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-br" data-bs-theme="auto">
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    
+    <title>Blog - Inacio Informatica</title>
+
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./blog.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Claro
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Escuro
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/>
+  </symbol>
+  <symbol id="cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+  </symbol>
+</svg>
+
+<div class="container">
+  <header class="border-bottom lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="/">Blog - Inacio Informatica</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="btn btn-sm btn-outline-secondary" href="./Restrito.php">Área Restrita</a>
+      </div>
+    </div>
+  </header>
+
+ 
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Imposto de Renda Pessoa Fisica 2025</h1>
+      <p class="lead my-3">A Receita Federal ainda não divulgou oficialmente o calendário da Declaração do Imposto de Renda Pessoa Física (IRPF) 2025, referente ao ano calendário 2024, mas o período para a entrega deverá ocorrer entre 17 de março e 31 de maio de 2025.</p>
+    </div>  
+  </div>
+  <div class="row g-5">
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Imposto de Renda 2025</h2>
+        <p class="blog-post-meta">17 de fevereiro de 2025 by <a>Inácio</a></p>
+
+        <p>A Receita Federal ainda não divulgou oficialmente o <strong>calendário da Declaração do Imposto de Renda Pessoa Física 
+          (IRPF) 2025, referente ao ano calendário 2024, mas o período para a entrega deverá ocorrer entre 17 de março e 31 de maio de 2025. </strong> </p>
+        <hr>
+        <p>Caso a declaração não seja entregue até o fim do prazo legal, o contribuinte estará sujeito a multa de 1% a 20% ao mês 
+          do imposto devido, com valor mínimo de R$ 165,74.</p>
+                
+        <h5>Estão obrigados a declarar os contribuintes que, em 2024, se enquadram em pelo menos uma das seguintes condições:</h5>
+        <ul>
+          <li>Obteve rendimentos tributáveis acima de R$ 30.639,90;</li>
+          <li>Recebeu rendimentos não tributáveis ou tributados exclusivamente na fonte acima de R$ 200 mil;</li>
+          <li>Obteve receita bruta decorrente de atividade rural em valor superior a R$ 153.199,50 ou pretenda compensar, no ano-calendário de 2023 ou
+             posteriores, prejuízos de anos-calendário anteriores ou do próprio ano-calendário de 2023;</li>
+          <li>Teve a posse ou a propriedade, até 31 de dezembro de 2024, de bens ou direitos, inclusive terra nua, acima de R$ 800 mil;</li>
+          <li>Realizou operações em bolsa de valores, de mercadorias, de futuros e assemelhadas;</li>
+          <li>Obteve ganho de capital na alienação de bens ou direitos, sujeito à incidência do imposto;</li>
+          <li>Obteve ganho de capital na alienação de bens ou direitos, sujeito à incidência do imposto;</li>
+          <li>Passou à condição de residente no Brasil, em qualquer mês de 2024, e nessa condição se encontrava em 31 de dezembro de 2024.</li>
+        </ul>
+        <h5>Quais são os documentos para declarar o IRPF 2025 ?</h5>
+        <p>A lista de documentação pode ser extensa, a depender do tipo de declaração. Por isso, manter todos os documentos e comprovantes armazenados ao longo do ano, de forma organizada, 
+          pode facilitar o preenchimento. <strong>Confira os principais documentos:</strong></p>
+        <dl>
+          <dt>Informes de rendimentos</dt>
+          <dd>como de contribuições previdenciárias e de empresas que trabalhou no ano anterior, além de instituições financeiras onde possui conta; caso seja autônomo, 
+            guarde os comprovantes como RPA, carnê-leão e notas fiscais de prestação de serviços.</dd>
+          <dt>Comprovantes de despesas e deduções</dt>
+          <dd>como documentação relativa a despesas médicas, mensalidades escolares, observando os limites de dedução estabelecidos pela Receita. 
+            <strong>lembrar que a emissão de recibo médico por profissionais de 
+            saúde pessoas físicas passou a ser obrigatório pelo aplicativo Receita Saúde,</strong> apartir desse ano a Receita Federal não aceitara
+            recibo como comprovante de despesas médicas</dd>
+          <dd>Além disso, guarde comprovantes de contribuições à Previdência Privada (PGBL) e oficial (INSS), caso não constem em outro informe.</dd>  
+          <dt>Eventuais recibos de doações</dt>
+          <dd>incentivadas que possam ser deduzidas, como fundos de cultura e esportes;</dd>
+          <dt>Compra e venda de bens, direitos e dívidas</dt>
+          <dd>como compra e venda de imóveis e veículos, pois são fundamentais para atualização de valores e verificação de ganho de capital, além de recibos de financiamentos ou de saldos de empréstimos,
+             bem como certificados ou extratos de aplicações financeiras e participações em empresas;</dd>
+          <dt>Outros comprovantes e informações</dt>
+          <dd>como recibos de alugueis recebidos ou pagos, incluindo contratos de locação; para quem possui atividade rural, declaração e a documentação de receitas e despesas; 
+            e documentos relativos à herança ou doações recebidas ao longo do ano</dd>
+          <dt>Comprovantes das transações</dt>
+          <dd>para quem opera com criptomoedas ou ativos digitais.</dd>                              
+        </dl>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Imposto de Renda: governo deve ampliar faixa de isenção para R$ 3.036 em 2025</h2>
+        <p class="blog-post-meta">14 de janeiro de 2024 by <a>Fonte: G1</a></p>
+
+        <p>Ajuste é necessário para manter isenção de até 2 salários mínimos mensais; valor do mínimo foi reajustado em janeiro. Para 2026, equipe econômica estuda saída para cumprir promessa de isentar rendimento mensal de até R$ 5 mil.</p>
+
+        <p>A equipe econômica deve propor a ampliação da faixa de isenção do Imposto de Renda das Pessoas Físicas (IRPF) dos atuais R$ 2.824 para R$ 3.036 neste ano.</p>
+
+        <p>A medida visa manter o benefício para quem recebe até dois salários mínimos, que foi reajustado para R$ 1.518 no começo deste ano (com pagamento a partir de fevereiro).</p>
+
+        <h5>Isenção para até R$ 5 mil</h5>
+        <p>O governo também discute internamente como cumprir a promessa de campanha do presidente Luiz Inácio Lula da Silva (PT) de isentar rendas 
+          de até R$ 5 mil do Imposto de Renda. A ideia é que isso comece a valer somente em 2026.</p>
+        <p>Segundo a equipe econômica, quem ganha de R$ 5 mil a R$ 6.980 também será beneficiado, pagando menos, mas o governo ainda não detalhou como isso será feito.</p>
+        <p>A proposta do governo é de taxar quem ganha mais de R$ 50 mil por mês, ou R$ 600 mil por ano (menos de 1% dos trabalhadores) para bancar a perda de arrecadação de R$ 35 bilhões com a ampliação da faixa de isenção para até R$ 5 mil.</p>
+        <p>Se fosse aplicada já em 2025, a isenção do Imposto de Renda até R$ 5 mil poderia alcançar cerca de 28 milhões de brasileiros, segundo simulação Unafisco.</p>
+
+      </article>
+    </div>
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">Sobre</h4>
+          <p class="mb-0">Blog criado por Inácio Carneiro, especialista em Imposto de Renda de Pessoa Fisica, trabalha nesse área a mais de 20 (vinte) anos</p>
+        </div>
+      </div>
+    
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <a href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/perguntas-frequentes/imposto-de-renda/dirpf">Perguntas Frequentes</a>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p class="mb-0">
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
