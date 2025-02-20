@@ -53,8 +53,13 @@ loginForm.addEventListener("submit", async (e) => {
 cadForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    document.getElementById("cad-usuario-btn").value = "Salvando...";
+    
+    if (!validaCPF(cpf)) {
+        msgAlertErroLogin.innerHTML = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>CPF inválido. Verifique o número digitado<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+        document.getElementById('cpf').focus();
+    } else {
 
+    document.getElementById("cad-usuario-btn").value = "Salvando...";
     const dadosForm = new FormData(cadForm);
 
     const dados = await fetch("cadastrar.php", {
@@ -74,7 +79,7 @@ cadForm.addEventListener("submit", async (e) => {
         msgAlert.innerHTML = resposta['msg'];
     }   
 
-    document.getElementById("cad-usuario-btn").value = "Cadastrar";
+    document.getElementById("cad-usuario-btn").value = "Cadastrar";}
 });
 
 cadPedido.addEventListener("submit", async (e) => {

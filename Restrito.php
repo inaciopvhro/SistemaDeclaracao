@@ -110,7 +110,7 @@ include_once "conexao.php";
                         </div>
                         <div class="mb-3">
                             <input type="submit" class="btn btn-outline-primary bt-sm" id="login-usuario-btn" value="Acessar">
-                            <button type='button' class='btn btn-outline-success' data-bs-toggle='modal' data-bs-target='#cadUsuarioModal'>Cadastrar</button>
+                            <a>    ainda não tem cadastro ? <button type='button' class='btn btn-outline-success' data-bs-toggle='modal' data-bs-target='#cadUsuarioModal'>Cadastrar</button></a>
                         </div>
                     </form>
                 </div>
@@ -133,8 +133,8 @@ include_once "conexao.php";
                             <input type="text" name="cadnome" class="form-control" id="cadnome" placeholder="Digite o nome completo">
                         </div>
                         <div class="mb-3">
-                            <label for="cadcpf" class="col-form-label">CPF:</label>
-                            <input type="text" name="cadcpf" class="form-control" id="cadcpf" placeholder="Digite o seu CPF">
+                            <label for="cpf" class="col-form-label">CPF:</label>
+                            <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite o seu CPF">
                         </div>
                         <div class="mb-3">
                             <label for="cademail" class="col-form-label">Telefone:</label>
