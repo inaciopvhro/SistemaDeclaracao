@@ -133,8 +133,8 @@ include_once "conexao.php";
                             <input type="text" name="cadnome" class="form-control" id="cadnome" placeholder="Digite o nome completo">
                         </div>
                         <div class="mb-3">
-                            <label for="cpf" class="col-form-label">CPF:</label>
-                            <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite o seu CPF">
+                            <label for="cadcpf" class="col-form-label">CPF:</label>
+                            <input type="text" name="cadcpf" class="form-control" id="cadcpf" placeholder="Digite o seu CPF">
                         </div>
                         <div class="mb-3">
                             <label for="cademail" class="col-form-label">Telefone:</label>
@@ -204,7 +204,20 @@ include_once "conexao.php";
 		        e.target.value = cpfPattern;
 	        });
         });
-    </script> 
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        	document.getElementById('cadcpf').addEventListener('input', function(e) {
+		        var value = e.target.value;
+        		var cpfPattern = value.replace(/\D/g, '')
+		        			  .replace(/(\d{3})(\d)/, '$1.$2')
+							  .replace(/(\d{3})(\d)/, '$1.$2')
+							  .replace(/(\d{3})(\d)/, '$1-$2')
+							  .replace(/(-\d{2})\d+?$/, '$1');
+		        e.target.value = cpfPattern;
+	        });
+        });
+    </script>     
 </body>
 
 </html>
