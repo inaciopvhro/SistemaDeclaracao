@@ -24,7 +24,7 @@ include_once "conexao.php";
                 echo "<div class='container text-center'>";
                     echo "Bem vindo " . $_SESSION['nome'] . "<br>";
                     echo "<a><button type='button' class='btn btn-outline-success' data-bs-toggle='modal' data-bs-target='#cadDeclaracaoModal'>Fazer Pedido Declaração</button></a>";
-                    echo "<a href='sair.php'><button type='button' class='btn btn-outline-danger'>Sair</button></a></a>";
+                    echo "     <a href='sair.php'><button type='button' class='btn btn-outline-danger'>Sair</button></a></a>";
                 echo "</div>";
             echo "</header>";
         echo "</div>";
@@ -58,19 +58,45 @@ include_once "conexao.php";
                         echo "<td>" . $row["DATAABR"] . "</td>";
                         echo "<td>" . $row["DATAF"] . "</td>";
                         echo "<td>" . $row["statuservico"] . "</td>";
-                        if ($row["statuservico"] === "Finalizado") {
-                        echo "<td><a href='baixar_arquivo.php?idp=$row[idpedidos]&td=1'>Recibo</a></td>";
-                        echo "<td><a href='baixar_arquivo.php?idp=$row[idpedidos]&td=2'>Declaração</a></td>";
-                        } else {
-                            echo "<td><a>Não Disponivel</a></td>";
-                            echo "<td><a>Não Disponivel</a></td>";   
-                        }
+                        
+                        $query_itens = "SELECT * FROM ItensPedido WHERE idPedidos=:i";
+                        $result_itens = $conn->prepare($query_itens);
+                        $result_itens->bindParam(':i', $row["idpedidos"], PDO::PARAM_INT);
+                        $result_itens->execute();
+                        if(($result_itens) and ($result_itens->rowCount() != 0)){
+                            while($rows = $result_itens->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>";
+                                echo "<td>" . $rows["descitem"] . "</td>";
+                                if ($rows["statusIten"] === '1') {
+                                    $status = 'Aberto';
+                                }else if ($rows["statusIten"] === '2') {
+                                    $status = 'Em Processamento';
+                                }else if ($rows["statusIten"] === '3') {
+                                    $status = 'Aguardando Doc';
+                                }else if ($rows["statusIten"] === '4') {
+                                    $status = 'Pronta';
+                                }else if ($rows["statusIten"] === '5') {
+                                    $status = 'Pronta/Enviada';
+                                }
+                                echo "<td>" . $status . "</td>";
+                                if (empty($rows['DownloadRecibo'])) {
+                                    echo "<td><a>Recibo não disponivel</a></td>";    
+                                } else {
+                                    echo "<td><a href='baixar_arquivo.php?id=$rows[idItensPedido]&idt=1'>Recibo</a></td>";
+                                }
+                                if (empty($rows['DownloadDeclaracao'])) {
+                                    echo "<td><a>Declaração não disponivel</a></td>";    
+                                } else {
+                                    echo "<td><a href='baixar_arquivo.php?id=$rows[idItensPedido]&idt=2'>Declaração</a></td>";
+                                }
+                                
+                                
+                        }}
+
                         echo "</tr>";
                     }
-                } else {
-                    echo "Nenhum Pedido encontrado";
-                      
-                }?>
+                } else {echo "Nenhum Pedido encontrado"; }
+?>              
             </tbody>
             </table>
         </div>
@@ -90,6 +116,7 @@ include_once "conexao.php";
         <span id="msgAlert"></span>
     </div>
 
+    
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

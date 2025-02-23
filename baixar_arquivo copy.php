@@ -17,25 +17,23 @@ include_once "conexao.php";
 
 <?php
 
-if(isset($_GET['id']))
+if(isset($_GET['idp']))
 {
-$id = $_GET['id'];
-$idt = $_GET['idt'];
-
-$qry = "SELECT DownloadRecibo, DownloadDeclaracao FROM ItensPedido 
-        WHERE idItensPedido=:n";
+$id = $_GET['idp'];
+$idc = $_GET['td'];
+$qry = "SELECT arquivo, tipo FROM arquivoscliente 
+        WHERE idpedido=:nr and tipoarquivo=:t and codigocliente=:c";
 $res = $conn->prepare($qry);        
-$res->bindParam(':n', $id, PDO::PARAM_INT); 
+$res->bindParam(':nr', $id, PDO::PARAM_INT); 
+$res->bindParam(':t', $idc, PDO::PARAM_STR); 
+$res->bindParam(':c', $_SESSION['id'], PDO::PARAM_INT); 
 $res->execute();
 if(($res) and ($res->rowCount() != 0)){
         $row_arquivos = $res->fetch(PDO::FETCH_ASSOC);
-        if ($idt === '1') {
-                $conteudo = $row_arquivos['DownloadRecibo'];
-        } else if ($idt === '2') {
-                $conteudo = $row_arquivos['DownloadDeclaracao'];
-        }
-  
-        header('Content-type: application/pdf');
+        $tipos = $row_arquivos['tipo'];
+        $conteudo = $row_arquivos['arquivo'];
+ 
+        header('Content-type: ' . $tipos);
         print $conteudo;
         } else {
         ?>

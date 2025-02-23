@@ -98,6 +98,15 @@
     <!-- Custom styles for this template -->
     <link href="./blog.css" rel="stylesheet">
   </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H8Q0PWMHNX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H8Q0PWMHNX');
+</script>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
@@ -262,21 +271,40 @@
           <p class="mb-0">Blog criado por Inácio Carneiro, especialista em Imposto de Renda de Pessoa Fisica, trabalha nesse área a mais de 20 (vinte) anos</p>
         </div>
       </div>
-    
+      
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-body-tertiary rounded">
-          <a href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/perguntas-frequentes/imposto-de-renda/dirpf">Perguntas Frequentes</a>  
+          <h4 class="fst-italic">Declaração do Imposto de Renda completa x simplificada</h4>
+          <p class="mb-0">Na declaração completa é possível deduzir todas as despesas que o declarante teve no ano passado, 
+                          enquanto na simplificada esse valor é limitado a 20% dos rendimentos tributáveis ou R$ 16.754,34.</p>
+          <br>
+          <h5 class="fst-italic">Exemplo: Contribuinte obteve rendimentos anual bruto de R$ 50.000,00.</h5>
+          <p class="mb-0">
+            <strong>DECLARAÇÃO SIMPLIFICADA</strong><br>
+            R$ 50.000,00 - 20% = R$ 40.000,00.
+            Nesse caso a dedução seria de R$ 10.000,00, o imposto seria
+            aplicado em cima de R$ 40.000,00.</p><br>
+            <strong>DECLARAÇÃO COMPLETA</strong><br>
+            R$ 50.000,00 - R$ 12.000,00(deduções) = R$ 38.000,00.
+            Nesse caso a dedução seria de R$ 12.000,00, o imposto seria
+            aplicado em cima de R$ 38.000,00.<BR>
+            
+            A melhor seria então Declaração Completa, o contribuiente teria
+            uma restituição maior ou pagaria menos imposto.</p>            
+
         </div>
       </div>
+    
+      
     </div>
   </div>
 
 </main>
 
 <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
-  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a></p>
   <p class="mb-0">
-    <a href="#">Back to top</a>
+    <a href="#">voltar inicio</a>
   </p>
 </footer>
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
