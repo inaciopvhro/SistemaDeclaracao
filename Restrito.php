@@ -63,7 +63,7 @@ include_once "conexao.php";
                         echo "<td>" . $row["idpedidos"] . "</td>";
                         echo "<td>" . $row["DATAABR"] . "</td>";
                         echo "<td>" . $row["DATAF"] . "</td>";
-                        echo "<td>" . $row["statuservico"] . "</td>";
+                        echo "<td>" . $row["Situacao"] . "</td>";
                         
                         $query_itens = "SELECT * FROM ItensPedido WHERE idPedidos=:i";
                         $result_itens = $conn->prepare($query_itens);
