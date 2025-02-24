@@ -15,7 +15,13 @@ include_once "conexao.php";
     <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <title>Inacio Informatica - Área Restrita</title>
 </head>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-H8Q0PWMHNX');
+</script>
 <body>
     <?php
     if(isset($_SESSION['id']) and (isset($_SESSION['nome']))){
@@ -191,7 +197,7 @@ include_once "conexao.php";
                         <span id="msgAlertErroCadPedido"></span>
                         <div class="mb-3">
                             
-                            <select class="form-select form-select-lg" id="cadservico" aria-label="Small select example">
+                            <select class="form-select form-select-lg" id="cadservico" name="cadservico" aria-label="Small select example">
                             <option value="0" selected>selecione o serviço desejado</option>
                                 <option value="2">Declaração Completa R$ 150,00</option>
                                 <option value="1">Declaração Simplificada R$ 100,00</option>

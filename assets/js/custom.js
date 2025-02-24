@@ -96,7 +96,7 @@ cadPedido.addEventListener("submit", async (e) => {
         msgAlertErroCadPedido.innerHTML = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>Erro: Necessário selecionar tipo serviço!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
     } else {
         msgAlertErroCadPedido.innerHTML = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>Pedido realizado com sucesso !<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
-    const dadosForm = opcaoValor;
+    const dadosForm = new FormData(cadPedido);
 
     const dados = await fetch("cadpedido.php", {
          method: "POST",
