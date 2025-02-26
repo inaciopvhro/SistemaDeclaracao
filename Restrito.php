@@ -1,8 +1,7 @@
 <?php
+session_cache_expire(300);
 session_start();
 include_once "conexao.php";
-//Gerar senha
-//echo password_hash("123", PASSWORD_DEFAULT);
 
 ?>
 <!DOCTYPE html>
@@ -72,6 +71,7 @@ include_once "conexao.php";
                         if(($result_itens) and ($result_itens->rowCount() != 0)){
                             while($rows = $result_itens->fetch(PDO::FETCH_ASSOC)) {
                                 echo "<tr>";
+                                echo "<td>   </td>";
                                 echo "<td>" . $rows["descitem"] . "</td>";
                                 if ($rows["statusIten"] === '1') {
                                     $status = 'Aberto';
