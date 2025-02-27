@@ -36,15 +36,16 @@ include_once "conexao.php";
     ?>
     <main>
         <h2>Pedidos do Cliente</h2>
-        <br>
+     
         <div class='table-responsive small'>
             <table class='table table-striped table-sm'>
-            <thead>
+            <thead class="table-dark">
             <tr>
             <th scope='col'>#</th>
             <th scope='col'>Data Abertura</th>
             <th scope='col'>Data Fechamento</th>
             <th scope='col'>Situação</th>
+            <th scope='col'></th>
             </tr>
             </thead>
             <tbody id='myTable'>
@@ -59,11 +60,11 @@ include_once "conexao.php";
                 if(($result_usuario) and ($result_usuario->rowCount() != 0)){
                     while($row = $result_usuario->fetch(PDO::FETCH_ASSOC)) {
                         echo "<tr>";
-                        echo "<td>" . $row["idpedidos"] . "</td>";
-                        echo "<td>" . $row["DATAABR"] . "</td>";
-                        echo "<td>" . $row["DATAF"] . "</td>";
-                        echo "<td>" . $row["Situacao"] . "</td>";
-                        
+                        echo "<td class='table-primary'>" . $row["idpedidos"] . "</td>";
+                        echo "<td class='table-primary'>" . $row["DATAABR"] . "</td>";
+                        echo "<td class='table-primary'>" . $row["DATAF"] . "</td>";
+                        echo "<td class='table-primary'>" . $row["Situacao"] . "</td>";
+                        echo "<td class='table-primary'></td>";
                         $query_itens = "SELECT * FROM ItensPedido WHERE idPedidos=:i";
                         $result_itens = $conn->prepare($query_itens);
                         $result_itens->bindParam(':i', $row["idpedidos"], PDO::PARAM_INT);
@@ -71,8 +72,8 @@ include_once "conexao.php";
                         if(($result_itens) and ($result_itens->rowCount() != 0)){
                             while($rows = $result_itens->fetch(PDO::FETCH_ASSOC)) {
                                 echo "<tr>";
-                                echo "<td>   </td>";
-                                echo "<td>" . $rows["descitem"] . "</td>";
+                                echo "<td class='table-secondary'> * </td>";
+                                echo "<td class='table-secondary'>" . $rows["descitem"] . "</td>";
                                 if ($rows["statusIten"] === '1') {
                                     $status = 'Aberto';
                                 }else if ($rows["statusIten"] === '2') {
@@ -84,16 +85,16 @@ include_once "conexao.php";
                                 }else if ($rows["statusIten"] === '5') {
                                     $status = 'Pronta/Enviada';
                                 }
-                                echo "<td>" . $status . "</td>";
+                                echo "<td class='table-secondary'>" . $status . "</td>";
                                 if (empty($rows['DownloadRecibo'])) {
-                                    echo "<td><a>Recibo não disponivel</a></td>";    
+                                    echo "<td class='table-secondary'><a>Recibo não disponivel</a></td>";    
                                 } else {
-                                    echo "<td><a href='baixar_arquivo.php?id=$rows[idItensPedido]&idt=1'>Recibo</a></td>";
+                                    echo "<td class='table-secondary'><a href='baixar_arquivo.php?id=$rows[idItensPedido]&idt=1'>Recibo</a></td>";
                                 }
                                 if (empty($rows['DownloadDeclaracao'])) {
-                                    echo "<td><a>Declaração não disponivel</a></td>";    
+                                    echo "<td class='table-secondary'><a>Declaração não disponivel</a></td>";    
                                 } else {
-                                    echo "<td><a href='baixar_arquivo.php?id=$rows[idItensPedido]&idt=2'>Declaração</a></td>";
+                                    echo "<td class='table-secondary'><a href='baixar_arquivo.php?id=$rows[idItensPedido]&idt=2'>Declaração</a></td>";
                                 }
                                 
                                 

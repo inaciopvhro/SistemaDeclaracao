@@ -37,7 +37,7 @@ if (empty($dados['cadnome'])) {
             $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Usuário não atualizado com sucesso!</div>"];
         }
     } else {
-        $query_usuario = "INSERT INTO Clientes (NomeCliente, idcpf, email, SenhaCliente) VALUES (:nome, :cpf, :email, :senha)";
+        $query_usuario = "INSERT INTO Clientes (NomeCliente, idcpf, Telefones, SenhaCliente) VALUES (:nome, :cpf, :email, :senha)";
         $cad_usuario = $conn->prepare($query_usuario);
         $cad_usuario->bindParam(':nome', $dados['cadnome'], PDO::PARAM_STR);
         $cad_usuario->bindParam(':cpf', $dados['cadcpf'], PDO::PARAM_STR);
